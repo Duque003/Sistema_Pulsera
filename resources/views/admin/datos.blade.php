@@ -311,14 +311,6 @@
                                             <input id="maxspo2" type="text" class="form-control inputs" placeholder="Ej. 90" onclick="toggleValue('maxspo2', event)"/>
                                         </div>
                                     </div>
-
-                                    <!-- Filtro por ubicación -->
-                                    <a id="buttonU" class="dropdown-item subbutton" href="#" onclick="toggleSubmenu('locationMenu', event)">Ubicación</a>
-                                    <div id="locationMenu" class="submenu" style="display: none; padding: 10px;">
-                                        <a class="dropdown-item" href="#" data-filter="location:home">En casa</a>
-                                        <a class="dropdown-item" href="#" data-filter="location:work">En el trabajo</a>
-                                        <a class="dropdown-item" href="#" data-filter="location:other">Otros lugares</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -910,6 +902,7 @@
                 data.forEach(function(item) {
                     var row = document.createElement('tr');
                     row.innerHTML = `
+                        <td>${item.nombre_dispositivo}</td>
                         <td>${formatDate(item.created_at)}</td> <!-- Fecha formateada -->
                         <td>${item.created_at.split(' ')[1].substring(0, 5)}</td>
                         <td>${item.heart_rate} bpm</td>
