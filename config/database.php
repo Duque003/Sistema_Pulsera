@@ -55,7 +55,9 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => false,
+                PDO::MYSQL_ATTR_SSL_CA => env('DB_SSLCA') ? base_path('storage/' . env('DB_SSLCA')) : null,
+                PDO::ATTR_PERSISTENT => true,
+                PDO::ATTR_TIMEOUT => 10,
             ]) : [],
         ],
 
