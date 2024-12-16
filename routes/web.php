@@ -44,7 +44,7 @@ Route::get('/get-csrf-token', function () {
 }); 
 
 Route::get('/pulsera/conexion', function() {
-    return view('pulsera/conexion.php');
+    return view('pulsera.conexion.php');
 });
 
 Route::get('/admin/dispositivo', [AdminController::class, 'showdispositivo'])->name('admin.dispositivo');
