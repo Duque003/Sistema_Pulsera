@@ -650,6 +650,7 @@
                 data.forEach(function(item) {
                     var row = document.createElement('tr');
                     row.innerHTML = `
+                        <td>${ item.nombre_dispositivo}</td>
                         <td>${item.problema }</td>
                         <td>${formatDate(item.created_at)}</td> <!-- Fecha formateada -->
                         <td>${item.created_at.split(' ')[1].substring(0, 5)}</td>
