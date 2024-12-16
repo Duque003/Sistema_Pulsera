@@ -43,6 +43,10 @@ Route::get('/get-csrf-token', function () {
     return response()->json(['csrf_token' => csrf_token()]);
 }); 
 
+Route::get('/pulsera/conexion', function() {
+    return view('pulsera/conexion.php');
+});
+
 Route::get('/admin/dispositivo', [AdminController::class, 'showdispositivo'])->name('admin.dispositivo');
 
 Route::post('/dispositivo', [AdminController::class, 'storeD'])->name('dispositivo.store');
